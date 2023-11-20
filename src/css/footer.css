@@ -1,0 +1,33 @@
+.footer {
+  padding: 0 0 32px;
+}
+
+.footer-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.footer__logo {
+  width: 110px;
+}
+
+.footer__social-list {
+  display: flex;
+}
+
+.footer-social-list__item:first-child {
+  margin-right: 12px;
+}
+
+.footer-social-list__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  color: var(--white);
+  background-color: var(--pink);
+  border-radius: 50px;
+}

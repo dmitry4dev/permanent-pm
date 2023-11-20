@@ -1,0 +1,136 @@
+.header {
+  position: absolute;
+  top: 6%;
+  left: 50%;
+  z-index: 10;
+  width: 84%;
+  margin: 0 auto;
+  padding: 0 10px 20px;
+  background-color: var(--white);
+  border-radius: 5px;
+  transform: translate(-50%, -6%);
+  transition: all .3s ease-in-out;
+}
+
+.header__logo {
+  display: block;
+  width: 120px;
+  margin: 0 auto;
+}
+
+.header-inner-up {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px 0;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--dark-white);
+}
+
+.header__phone .fa-phone {
+  font-size: 20px;
+  color: var(--pink);
+}
+
+.header__social-list {
+  display: flex;
+}
+
+.header-social-list__item:first-child {
+  margin-right: 12px;
+}
+
+.header-social-list__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  color: var(--white);
+  background-color: var(--pink);
+  border-radius: 50px;
+}
+
+.header-inner-down {
+  position: fixed;
+  top: -200%;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px 10px 40px;
+  transition: all .3s ease-in-out;
+}
+
+.nav-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  color: var(--dark);
+  background-color: transparent;
+}
+
+.nav-close-btn .fa-close {
+  font-size: 30px;
+  opacity: .5;
+}
+
+.header__nav {
+  padding-top: 60px;
+}
+
+.nav__list {
+  margin-bottom: 40px;
+}
+
+.nav-list__item {
+  padding: 15px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.nav-list__link {
+  display: block;
+  width: 100%;
+}
+
+.header__lang-list {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 20px;
+}
+
+.lang-list__item:first-child {
+  margin-right: 20px;
+}
+
+.header__menu-btn {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--dark);
+}
+
+.header__menu-btn .fa-navicon {
+  margin-right: 4px;
+  font-size: 22px;
+}
+
+/* SHOW MOBILE MENU */
+
+.show-nav {
+  top: -10%;
+  width: 100%;
+  margin: 0 auto;
+  background-color: var(--white);
+}
+
+.header-full-width {
+  width: 100%;
+  padding: 0;
+}
