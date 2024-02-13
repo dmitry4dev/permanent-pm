@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./src/font/font-awesome-4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./src/font/fontawesome-free-5.15.4-web/css/all.css">
   <link rel="stylesheet" href="./src/css/splide-core.min.css">
   <link rel="stylesheet" href="./src/css/aos.css">
   <link rel="stylesheet" href="./src/css/normalize.css">
@@ -16,64 +16,82 @@
   <title>Качественный перманентный макияж в Таллинне и Йыхви</title>
   <script src="./src/js/splide.min.js" defer></script>
   <script src="./src/js/aos/dist/aos.js" defer></script>
-  <script src="./src/js/index.js" defer></script>
+  <script type="module" src="./src/js/index.js" defer></script>
 </head>
 
 <body>
   <header class="header">
     <div class="container">
-      <img src="./src/img/logo-min.jpg" alt="перманентный макияж от Пугачёвой Марины" class="header__logo">
-      <div class="header-inner-up">
-        <a href="tel:+37255630942" class="header__phone">
-          <i class="fa fa-phone"></i>
-          +372 5563 0942
-        </a>
-        <ul class="header__social-list header-social-list">
-          <li class="header-social-list__item">
-            <a href="" class="header-social-list__link">
-              <i class="fa fa-facebook"></i>
-            </a>
-          </li>
-          <li class="header-social-list__item">
-            <a href="" class="header-social-list__link">
-              <i class="fa fa-instagram"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="header-inner-down">
-        <button class="nav-close-btn">
-          <i class="fa fa-close"></i>
-        </button>
-        <nav class="header__nav nav">
-          <ul class="nav__list nav-list">
-            <li class="nav-list__item">
-              <a href="#service-anchor" class="nav-list__link">Услуги</a>
+      <div class="header-wrapper">
+        <div class="logo-wrapper">
+          <img src="./src/img/logo-s.png" class="header__logo" alt="перманентный макияж от Пугачёвой Марины">
+          <img src="./src/img/mobile-logo.jpg" class="header__mobile-logo" alt="перманентный макияж от Пугачёвой Марины">
+          <span class="header__mobile-logo-subtext">permanent makeup</span>
+        </div>
+        <div class="header-inner-up">
+          <ul class="header__contact-list header-contact-list">
+            <li class="header-contact-list__item">
+              <a href="tel:+37255630942" class="header-contact-list__link">
+                <i class="fas fa-phone"></i>
+                +372 5563 0942
+              </a>
             </li>
-            <li class="nav-list__item">
-              <a href="#portfolio-anchor" class="nav-list__link">Портфолио</a>
+            <li class="header-contact-list__item">
+              <i class="fas fa-map-marker-alt"></i>
+              Jõhvi, Rakvere tn 13 - 25
             </li>
-            <li class="nav-list__item">
-              <a href="#price-anchor" class="nav-list__link">Цены</a>
-            </li>
-            <li class="nav-list__item">
-              <a href="#contact-anchor" class="nav-list__link">Контакты</a>
+            <li class="header-contact-list__item">
+              <i class="fas fa-map-marker-alt"></i>
+              Tallinn, Virbi 10 - 77
             </li>
           </ul>
-        </nav>
-        <ul class="header__lang-list lang-list">
-          <li class="lang-list__item">
-            <a href="" class="lang-list__link">ET</a>
-          </li>
-          <li class="lang-list__item">
-            <a href="" class="lang-list__link lang-active">RU</a>
-          </li>
-        </ul>
+          <ul class="header__social-list header-social-list">
+            <li class="header-social-list__item">
+              <a href="" class="header-social-list__link">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </li>
+            <li class="header-social-list__item">
+              <a href="" class="header-social-list__link">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="header-inner-down">
+          <button class="nav-close-btn">
+            <i class="far fa-window-close"></i>
+          </button>
+          <nav class="header__nav nav">
+            <ul class="nav__list nav-list">
+              <li class="nav-list__item">
+                <a href="#service-anchor" class="nav-list__link">Услуги</a>
+              </li>
+              <li class="nav-list__item">
+                <a href="#portfolio-anchor" class="nav-list__link">Портфолио</a>
+              </li>
+              <li class="nav-list__item">
+                <a href="#price-anchor" class="nav-list__link">Цены</a>
+              </li>
+              <li class="nav-list__item">
+                <a href="#contact-anchor" class="nav-list__link">Контакты</a>
+              </li>
+            </ul>
+          </nav>
+          <ul class="header__lang-list lang-list">
+            <li class="lang-list__item">
+              <a href="" class="lang-list__link">ET</a>
+            </li>
+            <li class="lang-list__item">
+              <a href="" class="lang-list__link lang-active">RU</a>
+            </li>
+          </ul>
+        </div>
+        <button class="header__menu-btn">
+          <i class="fa fa-navicon"></i>
+          Меню
+        </button>
       </div>
-      <button class="header__menu-btn">
-        <i class="fa fa-navicon"></i>
-        Меню
-      </button>
     </div>
   </header>
   <main class="main">
@@ -103,11 +121,12 @@
           <p class="descr__subtext" data-aos="fade-up">
             Выполняем самые сложные и многоэтапные удаления и исправления некачественных работ
           </p>
-          <button class="descr__btn contact-btn">Записаться</button>
+          <button class="descr__btn contact-btn" data-aos="fade-up">Записаться</button>
       </div>
     </section>
     <section id="service-anchor" class="service">
-      <svg class="ornament" xmlns="http://www.w3.org/2000/svg" width="432" height="36" fill="#f9f9f9" viewBox="0 0 432 36">
+      <svg class="ornament" xmlns="http://www.w3.org/2000/svg" width="432" height="36" fill="#f9f9f9"
+        viewBox="0 0 432 36">
         <path d="M216 36H0s0-18 90-18S216 0 216 0s36 18 126 18 90 18 90 18H216z" />
         <path d="M216 36H0s0-18 90-18S216 0 216 0s36 18 126 18 90 18 90 18H216z" />
       </svg>
@@ -115,9 +134,7 @@
         <h2 class="service__title page-subtitle" data-aos="fade-up">Услуги</h2>
         <ul class="service__list service-list">
           <li class="service-list__item" data-aos="fade-up">
-            <figure class="servie-list__icon">
-              <i class="fa fa-heart-o"></i>
-            </figure>
+            <div class="service-list__icon"></div>
             <h3 class="service-list__title">ПЕРМАНЕНТНЫЙ МАКИЯЖ БРОВЕЙ</h3>
             <p class="service-list__text">
               Современные техники нанесения перманента помогают мастерам деликатно работать с вашей кожей, сохранять и
@@ -126,9 +143,7 @@
             </p>
           </li>
           <li class="service-list__item" data-aos="fade-up">
-            <figure class="servie-list__icon">
-              <i class="fa fa-star-o"></i>
-            </figure>
+            <div class="service-list__icon"></div>
             <h3 class="service-list__title">ПЕРМАНЕНТНЫЙ МАКИЯЖ ГУБ</h3>
             <p class="service-list__text">
               Основная задача, которую решает процедура — заполнение бледного контура губ, насыщение цветом недостаточно
@@ -137,9 +152,7 @@
             </p>
           </li>
           <li class="service-list__item" data-aos="fade-up">
-            <figure class="servie-list__icon">
-              <i class="fa fa-heart-o"></i>
-            </figure>
+            <div class="service-list__icon"></div>
             <h3 class="service-list__title">ПЕРМАНЕНТНЫЙ МАКИЯЖ ВЕК</h3>
             <p class="service-list__text">
               Из всех зон перманентного макияжа, веки вызывают наибольшее количество опасений. Действительно, есть целый
@@ -148,9 +161,7 @@
             </p>
           </li>
           <li class="service-list__item" data-aos="fade-up">
-            <figure class="servie-list__icon">
-              <i class="fa fa-star-o"></i>
-            </figure>
+            <div class="service-list__icon"></div>
             <h3 class="service-list__title">УДАЛЕНИЕ СТАРОГО ПЕРМАНЕНТНОГО МАКИЯЖА</h3>
             <p class="service-list__text">
               В нашей студии вы можете избавиться от некачественного перманентного макияжа любой сложности. В зоне
@@ -160,9 +171,7 @@
             </p>
           </li>
           <li class="service-list__item" data-aos="fade-up">
-            <figure class="servie-list__icon">
-              <i class="fa fa-heart-o"></i>
-            </figure>
+            <div class="service-list__icon"></div>
             <h3 class="service-list__title">ИСПРАВЛЕНИЕ НЕКАЧЕСТВЕННОГО ПЕРМАНЕНТНОГО МАКИЯЖА</h3>
             <p class="service-list__text">
               Однажды ошибившись в выборе мастера, важно обратиться к опытному специалисту. Процедура исправления
@@ -171,9 +180,7 @@
             </p>
           </li>
           <li class="service-list__item" data-aos="fade-up">
-            <figure class="servie-list__icon">
-              <i class="fa fa-star-o"></i>
-            </figure>
+            <div class="service-list__icon"></div>
             <h3 class="service-list__title">МИНИ ТАТУ</h3>
             <p class="service-list__text">
               Наши гостьи все чаще интересуются татуировками. Кто-то хочет запечатлеть дорогие сердцу воспоминания.
@@ -231,7 +238,8 @@
               </ul>
             </div>
           </div>
-          <div id="thumbnail-carousel" class="splide" aria-label="Работы мастера перманентного макияжа Пугачёвой Марины">
+          <div id="thumbnail-carousel" class="splide"
+            aria-label="Работы мастера перманентного макияжа Пугачёвой Марины">
             <div class="splide__track">
               <ul class="splide__list">
                 <li class="splide__slide">
@@ -373,26 +381,48 @@
             обновления.
           </p>
         </article>
-        <button class="portfolio__btn contact-btn">Записаться</button>
+        <button class="portfolio__btn contact-btn" data-aos="fade-up">Записаться</button>
       </div>
     </section>
     <section id="contact-anchor" class="contact">
-      <svg class="ornament" xmlns="http://www.w3.org/2000/svg" width="432" height="36" fill="#f9f9f9" viewBox="0 0 432 36">
+      <svg class="ornament" xmlns="http://www.w3.org/2000/svg" width="432" height="36" fill="#f9f9f9"
+        viewBox="0 0 432 36">
         <path d="M216 36H0s0-18 90-18S216 0 216 0s36 18 126 18 90 18 90 18H216z" />
         <path d="M216 36H0s0-18 90-18S216 0 216 0s36 18 126 18 90 18 90 18H216z" />
       </svg>
       <div class="container">
-        <h2 class="contact__title page-subtitle">Контакты</h2>
+        <h2 class="contact__title page-subtitle" data-aos="fade-up">Контакты</h2>
         <ul class="contact__list contact-list">
           <li class="contact-list__item" data-aos="fade-up">
-            <i class="fa fa-phone"></i>
+            <i class="fas fa-map-marker-alt"></i>
+            Jõhvi, Rakvere tn 13 - 25
+          </li>
+          <li class="contact-list__item" data-aos="fade-up">
+            <i class="fas fa-map-marker-alt"></i>
+            Tallinn, Virbi 10 - 77
+          </li>
+          <li class="contact-list__item" data-aos="fade-up">
+            <i class="fas fa-phone"></i>
             Телефон:
             <a href="tel:+37255630942" class="contact-list__link">+372 5563 0942</a>
           </li>
-          <li class="contact-list__item" data-aos="fade-up">
-            <i class="fa fa-envelope"></i>
-            Е-майл:
-            <a href="mailTo:marina@mail.ru" class="contact-list__link">pugatsova_marina@mail.ru</a>
+        </ul>
+        <p class="contact__subtext" data-aos="fade-up">Свяжитесь со мной удобным для вас способом:</p>
+        <ul class="contact__social-list contact-social-list" data-aos="fade-up">
+          <li class="contact-social-list__item">
+            <a href="viber://chat?number=37255630942" class="contact-social-list__link">
+              <i class="fab fa-viber"></i>
+            </a>
+          </li>
+          <li class="contact-social-list__item">
+            <a href="https://wa.me/37255630942" class="contact-social-list__link">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </li>
+          <li class="contact-social-list__item">
+            <a href="https://m.me/marina.pugacheva.73/" target="_blank" class="contact-social-list__link">
+              <i class="fab fa-facebook-messenger"></i>
+            </a>
           </li>
         </ul>
       </div>
@@ -403,15 +433,16 @@
   <div class="container">
     <div class="footer-wrapper">
       <img src="./src/img/logo-min.jpg" alt="Перманентный макияж от Марины Пугачёвой" class="footer__logo">
+      <span class="footer__copyright">Copyright EU © 2024 Pugatsova Marina</span>
       <ul class="footer__social-list footer-social-list">
         <li class="footer-social-list__item">
           <a href="" class="footer-social-list__link" target="_blank">
-            <i class="fa fa-facebook"></i>
+            <i class="fab fa-facebook-f"></i>
           </a>
         </li>
         <li class="footer-social-list__item">
           <a href="" class="footer-social-list__link" target="_blank">
-            <i class="fa fa-instagram"></i>
+            <i class="fab fa-instagram"></i>
           </a>
         </li>
       </ul>

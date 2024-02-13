@@ -3,13 +3,13 @@
 .hero {
   position: relative;
   z-index: -1;
-  height: 100vh;
-  margin-bottom: 70px;
-  padding: 80px 0 60px;
-  background-image: url("../img/hero-bg.jpg");
+  height: 650px;
+  margin-bottom: 90px;
+  padding: 110px 0 60px;
+  background-image: url("../img/hero-bg-2.jpg");
   background-repeat: no-repeat;
-  background-position: center center;
   background-size: cover;
+  background-position: left center;
   background-attachment: scroll;
 }
 
@@ -21,14 +21,14 @@
   right: 0;
   bottom: 0;
   z-index: -1;
-  background-color: rgba(10,0,0,0.5);
+  background-color: rgba(10, 0, 0, 0.5);
 }
 
 .hero-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  height: 100vh;
+  height: 650px;
 }
 
 .hero__title,
@@ -37,13 +37,14 @@
 }
 
 .hero__title {
-  margin-bottom: 12px;
+  margin-bottom: 24px;
   text-align: center;
   font-size: 34px;
 }
 
 .hero__subtitle {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+  padding: 0 5px;
   text-align: center;
   font-size: 14px;
   line-height: 1.5;
@@ -54,17 +55,18 @@
 
 .descr {
   position: relative;
-  margin-bottom: 70px;
+  margin-bottom: 90px;
 }
 
 .descr .ornament {
-  top: -1px;
+  top: -20px;
   left: 50%;
   transform: translate(-50%, -100px);
 }
 
 .descr__title {
   margin-bottom: 48px;
+  padding: 0 10px;
   font-size: 16px;
   font-weight: 400;
   letter-spacing: .5em;
@@ -76,12 +78,12 @@
 
 .descr__text {
   margin-bottom: 48px;
-  padding: 0 5px;
+  padding: 0 10px;
   text-align: center;
 }
 
 .descr__subtext {
-  padding: 0 5px;
+  padding: 0 10px;
   font-weight: 700;
   text-align: center;
 }
@@ -113,11 +115,16 @@
   transform: translate(-50%, -100px);
 }
 
-.service-list__item:not(:last-child) {
-  margin-bottom: 48px;
+.service__list {
+  padding: 0 10px;
 }
 
-.servie-list__icon {
+.service-list__item:not(:last-child) {
+  margin-bottom: 58px;
+}
+
+.service-list__icon {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -128,6 +135,21 @@
   border: 2px solid var(--dark-white);
   border-radius: 50px;
 }
+
+.service-list__item .service-list__icon {
+  font-family: "Font Awesome 5 Free";
+  font-size: 32px;
+  color: var(--dark);
+}
+
+.service-list__item:nth-child(odd) .service-list__icon::before {
+  content: "\f004";
+}
+
+.service-list__item:nth-child(even) .service-list__icon::before {
+  content: "\f005";
+}
+
 
 .service-list__title {
   margin-bottom: 10px;
@@ -142,6 +164,21 @@
 
 /* SERVICE SECTION */
 
+.service__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.service-list__title {
+  margin-bottom: 20px;
+}
+
+.service-list__item {
+  padding: 40px 10px;
+  background-color: var(--white);
+  border-radius: 8px;
+}
+
 .portfolio {
   position: relative;
   margin-bottom: 90px;
@@ -155,15 +192,15 @@
 
 .portfolio__subtitle {
   margin-bottom: 56px;
-  padding: 0 5px;
+  padding: 0 10px;
   text-align: center;
 }
 
 /* SLIDER */
 
 .slider-wrapper {
- width: 95%;
- margin: 0 auto;
+  width: 95%;
+  margin: 0 auto;
 }
 
 #main-carousel {
@@ -202,30 +239,30 @@
 }
 
 .price-table:not(:last-of-type) {
-  margin-bottom: 48px;
-}
-
-.price-table:last-of-type {
   margin-bottom: 56px;
 }
 
+.price-table:last-of-type {
+  margin-bottom: 68px;
+}
+
 .price-table__title {
-  margin-bottom: 16px;
-  padding: 0 5px;
+  margin-bottom: 24px;
+  padding: 0 10px;
   text-align: center;
   text-transform: uppercase;
 }
 
 .table {
   width: 100%;
-  margin-bottom: 16px;
+  margin-bottom: 32px;
   border-collapse: collapse;
   border-bottom: 1px solid #ddd;
   border-radius: 5px;
 }
 
 .table__header th {
-  padding: 15px 5px;
+  padding: 15px 10px;
   font-size: 16px;
   text-transform: uppercase;
   color: var(--dark);
@@ -237,7 +274,7 @@
 }
 
 .table__cell {
-  padding: 15px 5px;
+  padding: 15px 10px;
   border-top: 1px solid #ddd;
 }
 
@@ -251,6 +288,7 @@
 }
 
 .price-table__subtext {
+  padding: 0 10px;
   font-size: 16px;
   text-align: center;
   color: var(--dark);
@@ -266,7 +304,7 @@
 .contact {
   position: relative;
   margin-bottom: 56px;
-  padding: 48px 0 56px;
+  padding: 48px 0 76px;
   background-color: var(--light-grey);
 }
 
@@ -277,17 +315,222 @@
 }
 
 .contact__list {
+  margin-bottom: 48px;
   padding: 0 10px;
+  text-align: center;
+}
+
+.contact-list__item:not(:last-child) {
+  margin-bottom: 12px;
 }
 
 .contact-list__item .fa-phone,
-.contact-list__item .fa-envelope {
-  margin-right: 6px;
+.contact-list__item .fa-map-marker-alt {
+  margin-right: 4px;
   font-size: 20px;
   color: var(--pink);
+}
+
+.contact-list__item .fa-phone {
+  transform: rotate(90deg);
 }
 
 .contact-list__link {
   margin-left: 6px;
   word-break: break-all;
+}
+
+.contact__subtext {
+  margin-bottom: 36px;
+  text-align: center;
+}
+
+.contact__social-list {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.contact-social-list__link .fa-viber {
+  font-size: 38px;
+  color: var(--viber);
+}
+
+.contact-social-list__link .fa-whatsapp {
+  font-size: 38px;
+  color: var(--whatsapp);
+}
+
+.contact-social-list__link .fa-facebook-messenger {
+  font-size: 38px;
+  color: var(--facebook);
+}
+
+
+/* MEDIA QUERIES */
+
+@media all and (min-width: 690px) {
+
+  /* HERO SECTION */
+
+  .hero__title {
+    padding: 0px 20px;
+  }
+
+  /* SERVICE SECTION */
+
+  .service-list__text {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  /* SLIDER */
+
+  .slider-wrapper {
+    width: 90%;
+  }
+
+  #main-carousel .splide__slide img {
+    height: 400px;
+  }
+
+  /* PRICE SECTION */
+
+  .table {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 32px;
+  }
+
+  /* CONTACT SECTION */
+
+  .contact {
+    margin-bottom: 76px;
+  }
+
+  .contact__social-list {
+    width: 50%;
+  }
+}
+
+@media all and (min-width: 998px) {
+
+  /* HERO SECTION */
+
+  .hero {
+    height: 100vh;
+    margin-bottom: 120px;
+    padding: 110px 0 60px;
+  }
+
+  .hero-wrapper {
+    display: flex;
+    height: 100vh;
+  }
+
+  .hero__subtitle {
+    margin-bottom: 80px;
+    font-size: 16px;
+  }
+
+  /* DESCR SECTION */
+
+  .descr .ornament {
+    top: -45px;
+  }
+
+  /* SERVICE SECTION */
+
+  .service {
+    margin-bottom: 120px;
+    padding: 120px 0;
+  }
+
+  .portfolio .ornament {
+    top: -45px;
+  }
+
+  .service__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .service-list__title {
+    padding: 0px 40px;
+  }
+
+  .service-list__item {
+    width: 96%;
+    height: auto;
+  }
+
+  .service-list__item:not(:last-child) {
+    margin-bottom: 0;
+  }
+
+  .item-fullsize {
+    width: 97%;
+    margin: 0 auto;
+    grid-column: 1 / span 2;
+  }
+
+  .service-list__text {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  /* SLIDER */
+
+  .portfolio {
+    margin-bottom: 120px;
+  }
+
+  .slider-wrapper {
+    width: 80%;
+  }
+
+  #main-carousel .splide__slide img {
+    height: 460px;
+  }
+
+  /* PRICE SECTION */
+
+  .price {
+    margin-bottom: 160px;
+  }
+
+  .price-table:not(:last-of-type) {
+    margin-bottom: 76px;
+  }
+
+  .price-table:last-of-type {
+    margin-bottom: 98px;
+  }
+
+  .table {
+    width: 80%;
+  }
+
+  /* CONTACT SECTION */
+
+  .contact {
+    padding: 68px 0 98px;
+  }
+
+  .contact__social-list {
+    width: 30%;
+  }
+}
+
+@media all and (min-width: 1400px) {
+
+  .hero__title {
+    font-size: 48px;
+  }
+
+  .hero__subtitle {
+    margin-bottom: 120px;
+  }
 }
