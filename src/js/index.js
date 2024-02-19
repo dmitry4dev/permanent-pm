@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   } else {
-    serviceItems.forEach((item, index) => {
+    serviceItems.forEach((item) => {
       if (item.classList.contains('item-fullsize')) {
         item.classList.remove('item-fullsize');
       }
@@ -82,6 +82,10 @@ document.addEventListener('DOMContentLoaded', () => {
   contactBtn.forEach(btn => {
     btn.addEventListener('click', () => {
       createPopup();
+
+      window.onscroll = () => window.scroll(0, 0);
+      document.body.style.overflowY = 'hidden';
+
       setTimeout(() => {
         document.querySelector('.popup').classList.add('show-popup');
       }, 200);

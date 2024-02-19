@@ -6,11 +6,17 @@ export const createPopup = (lang) => {
   const closeIcon = document.createElement('i');
   const popupContactList = document.createElement('ul');
   const contacts = {
-    phone: ['tel:+37255630942', 'Telefon'],
+    phone: ['tel:+37255630942', 'Telefon', '+372 5563 0942'],
     messenger: ['https://m.me/marina.pugacheva.73/', 'Messenger'],
-    viber: ['viber://chat?number=37255630942', 'Viber'],
+    viber: ['viber://chat?number=%2B37255630942', 'Viber'],
     whatsapp: ['https://wa.me/37255630942', 'Whatsapp']
   }
+  const screen = {
+    small: 0,
+    medium: 400,
+    large: 1024,
+    extraLarge: 1260
+  };
 
   popupContainer.classList.add('popup-container');
   popup.classList.add('popup');
@@ -29,32 +35,46 @@ export const createPopup = (lang) => {
     popupContactListItem.classList.add('popup-contact-list__item');
     popupContactListLink.classList.add('popup-contact-list__link');
 
-    switch(item) {
-      case 'phone' :
-        const contactItemSubTxt = document.createElement('span');
-
-        contactItemSubTxt.classList.add('item-subtxt');
-        contactItemSubTxt.textContent = 'Telefon';
-
+    switch (item) {
+      case 'phone':
         popupContactListIcon.classList.add(`fas`, `fa-${item}`);
 
         popupContactListLink.setAttribute('href', `${contacts[item][0]}`);
         popupContactListLink.textContent = contacts[item][1];
+
+        window.addEventListener('resize', resizeHandler);
+
+        resizeHandler();
+
+        function resizeHandler() {
+          const iw = window.innerWidth;
+          let size = null;
+
+          for (let s in screen) {
+            if (iw >= screen[s]) size = s;
+
+            if (iw >= screen['extraLarge']) {
+              popupContactListLink.firstChild.replaceWith(contacts[item][2])
+            } else {
+              popupContactListLink.firstChild.replaceWith(contacts[item][1]);
+            }
+          }
+        }
         break;
-      case 'messenger' :
+      case 'messenger':
         popupContactListIcon.classList.add(`fab`, `fa-facebook-${item}`);
 
         popupContactListLink.setAttribute('href', `${contacts[item][0]}`);
         popupContactListLink.setAttribute('target', '_blank');
         popupContactListLink.textContent = contacts[item][1];
         break;
-      case 'viber' :
+      case 'viber':
         popupContactListIcon.classList.add(`fab`, `fa-${item}`);
 
         popupContactListLink.setAttribute('href', `${contacts[item][0]}`);
         popupContactListLink.textContent = contacts[item][1];
         break;
-      case 'whatsapp' :
+      case 'whatsapp':
         popupContactListIcon.classList.add(`fab`, `fa-${item}`);
 
         popupContactListLink.setAttribute('href', `${contacts[item][0]}`);
@@ -77,13 +97,28 @@ export const createPopup = (lang) => {
   document.body.prepend(popupContainer);
 
   closeIcon.addEventListener('click', () => {
+    onClose(popupContainer);
+  });
+
+  popupContainer.addEventListener('click', (e) => {
+    if (e.target.closest('.popup')) {
+      return;
+    } else {
+      onClose(popupContainer);
+    }
+  });
+
+  function onClose(container) {
     document.querySelector('.popup').classList.remove('show-popup');
     document.querySelector('.popup').classList.add('hide-popup');
 
     setTimeout(() => {
-      popupContainer.remove();
+      container.remove();
+
+      window.onscroll = () => window.scroll;
+      document.body.style.overflowY = 'inherit';
     }, 200);
-  });
+  }
 
   return popupContainer;
 }
