@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (headerInner.classList.contains('show-nav')) {
           setTimeout(() => {
             headerInner.classList.remove('show-nav');
+            menuBtn.style.display = 'block';
           }, 100);
         }
       });
