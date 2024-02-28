@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
   AOS.init();
 
   const header = document.querySelector('.header');
-  const innerDown = document.querySelector('.header-inner-down');
-  const menuBtn = document.querySelector('.header__menu-btn');
+  const headerInner = document.querySelector('.header-inner');
+  const menuBtn = document.querySelector('.burger-icon');
   const navCloseBtn = document.querySelector('.nav-close-btn');
   const anchorLinks = document.querySelectorAll('.nav-list__link');
   const serviceItems = document.querySelectorAll('.service-list__item');
@@ -25,13 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
           behavior: 'smooth'
         });
 
-        if (header.classList.contains('header-full-width')) {
-          header.classList.remove('header-full-width');
-        }
-
-        if (innerDown.classList.contains('show-nav')) {
+        if (headerInner.classList.contains('show-nav')) {
           setTimeout(() => {
-            innerDown.classList.remove('show-nav');
+            headerInner.classList.remove('show-nav');
           }, 100);
         }
       });
@@ -39,27 +35,19 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   menuBtn.addEventListener('click', () => {
-    if (!header.classList.contains('header-full-width')) {
-      setTimeout(() => {
-        header.classList.add('header-full-width');
-      }, 100)
-    }
+    headerInner.classList.add('show-nav');
 
-    if (!innerDown.classList.contains('header-full-width')) {
-      innerDown.classList.add('show-nav');
-    }
+    setTimeout(() => {
+      menuBtn.style.display = 'none';
+    }, 200);
   });
 
   navCloseBtn.addEventListener('click', () => {
-    if (header.classList.contains('header-full-width')) {
-      header.classList.remove('header-full-width');
-    }
+    headerInner.classList.remove('show-nav');
 
-    if (innerDown.classList.contains('show-nav')) {
-      setTimeout(() => {
-        innerDown.classList.remove('show-nav');
-      }, 100);
-    }
+    setTimeout(() => {
+      menuBtn.style.display = 'block';
+    }, 100);
   });
 
   if (serviceItems.length % 2 !== 0) {
