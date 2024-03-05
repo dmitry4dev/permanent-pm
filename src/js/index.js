@@ -1,8 +1,9 @@
 import { createPopup } from './utils/createPopup.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-
   AOS.init();
+
+  const url = new URL(location.href);
 
   const header = document.querySelector('.header');
   const headerInner = document.querySelector('.header-inner');
@@ -70,7 +71,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   contactBtn.forEach(btn => {
     btn.addEventListener('click', () => {
-      createPopup();
+      if (url.pathname.includes('ru')) {
+        createPopup('ru');
+      } else {
+        createPopup('ee');
+      }
+
 
       window.onscroll = () => window.scroll(0, 0);
       document.body.style.overflowY = 'hidden';

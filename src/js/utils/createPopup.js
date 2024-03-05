@@ -25,7 +25,7 @@ export const createPopup = (lang) => {
   popupTitle.classList.add('popup__title');
   popupContactList.classList.add('popup__contact-list', 'popup-contact-list');
 
-  popupTitle.textContent = 'Запишитесь на приём удобным для Вас способом';
+  (lang == 'ru') ? popupTitle.textContent = 'Запишитесь на приём удобным для Вас способом' : popupTitle.textContent = 'Broneerige aeg Teile sobival viisil';
 
   for (const item in contacts) {
     const popupContactListItem = document.createElement('li');

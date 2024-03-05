@@ -321,7 +321,7 @@
 }
 
 .contact-list__item:not(:last-child) {
-  margin-bottom: 12px;
+  margin-bottom: 24px;
 }
 
 .contact-list__item .fa-phone,
